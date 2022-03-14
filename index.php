@@ -13,7 +13,13 @@
         }
         div{
             font-weight: bold;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+        }
+        .prop{
+            display: flex;
+        }
+        .prop-sentence{
+            width: 100px;
         }
         .container{
             border: solid black 1px;
@@ -22,29 +28,75 @@
     </style>
 
 </head>
+<?php
+    if(isset($_POST['submit'])){
+        $style = "Test";
+    }
+?>
+
 <body>
     <div class="container">
         <h1>Project Webprog</h1>
         <h4>Theofilus Arifin - 160420046</h4>
         <h4>Valencia - 160820016</h4>
         <br><br>
-        <form action="POST">
-            <div>Width : <input type="number"> &nbsp; 
-                <select name="" id="">
-                    <option value="px">px</option>
-                    <option value="em">em</option>
-                    <option value="rem">rem</option>
-                </select>
+        <form action="index.php" method="POST">
+            
+            <!-- Width -->
+            <div class="prop">
+                <div class="prop-sentence">
+                    Width : 
+                </div>
+                <div>
+                    <input type="number"> &nbsp; 
+                    <select name="" id="">
+                        <option value="px">px</option>
+                        <option value="em">em</option>
+                        <option value="rem">rem</option>
+                    </select>
+                </div>
             </div>
-            <div>Text-align : 
-                <select name="" id="">
-                    <option value="right">right</option>
-                    <option value="left">left</option>
-                </select>
+
+            <!-- Height -->
+            <div class="prop">
+                <div class="prop-sentence">
+                    Height : 
+                </div>
+                <div>
+                    <input type="number"> &nbsp; 
+                    <select name="" id="">
+                        <option value="px">px</option>
+                        <option value="em">em</option>
+                        <option value="rem">rem</option>
+                    </select>
+                </div>
             </div>
-            <div>Background : <input type="text"></div>
+
+            <!-- Text-align -->
+            <div class="prop">
+                <div class="prop-sentence">
+                    Text-align :
+                </div>
+                <div>
+                    <select name="" id="">
+                        <option value="right">right</option>
+                        <option value="left">left</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Background -->
+            <div class="prop">
+                <div class="prop-sentence">
+                    Background : 
+                </div>
+                <div>
+                    <input type="text">
+                </div> 
+            </div>
+
             <br>
-            <input type="submit">
+            <input type="submit" name="submit">
         </form>
 
         <p>CSS:</p>
