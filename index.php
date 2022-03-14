@@ -41,7 +41,7 @@
         <h4>Valencia - 160820016</h4>
         <br><br>
         <form action="index.php" method="POST">
-            
+
             <!-- Width -->
             <div class="prop">
                 <div class="prop-sentence">
@@ -83,6 +83,16 @@
                         <option value="left">left</option>
                     </select>
                 </div>
+            </div>
+
+            <!-- Color -->
+            <div class="prop">
+                <div class="prop-sentence">
+                    Color : 
+                </div>
+                <div>
+                    <input type="text">
+                </div> 
             </div>
 
             <!-- Background -->
