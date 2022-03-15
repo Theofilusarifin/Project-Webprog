@@ -114,8 +114,13 @@
                     <input type="number"> &nbsp; 
                     <input type="number"> &nbsp; 
                     <input type="number"> &nbsp; 
-                    <label>px</label>
+                    <label>px</label> &nbsp; 
                 </div> 
+                <div>
+                    <input type="text">
+                    <label>color</label>
+                </div>
+
             </div>
 
             <br>
