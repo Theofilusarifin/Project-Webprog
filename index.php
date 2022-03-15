@@ -108,14 +108,14 @@
             <!-- Box Shadow -->
             <div class="prop">
                 <div class="prop-sentence">
-                    Box-Shadow : 
+                    Box-Shadow: 
                 </div>
                 <div>
-                    <input type="number"> &nbsp; 
-                    <input type="number"> &nbsp; 
-                    <input type="number"> &nbsp; 
                     <select name="" id="">
-                        <option value="px">px</option>
+                    <input type="number"> &nbsp; 
+                    <input type="number"> &nbsp; 
+                    <input type="number"> &nbsp; 
+                    <label>px</label>
                     </select>
                 </div> 
             </div>
