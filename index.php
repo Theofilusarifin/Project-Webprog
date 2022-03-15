@@ -116,7 +116,6 @@
                     <input type="number"> &nbsp; 
                     <select name="" id="">
                         <option value="px">px</option>
-                        <option value="none">none</option>
                     </select>
                 </div> 
             </div>
