@@ -120,7 +120,35 @@
                     <input type="text">
                     <label>color</label>
                 </div>
+            </div>
 
+            <!-- Border-Width -->
+             <div class="prop">
+                <div class="prop-sentence">
+                    Border-width:
+                </div>
+                <div>
+                    <select name="" id="">
+                        <option value="thin">thin</option>
+                        <option value="medium">medium</option>
+                        <option value="thick">thick</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Text Decoration -->
+            <div class="prop">
+                <div class="prop-sentence">
+                    Text Decoration:
+                </div>
+                <div>
+                    <select name="" id="">
+                        <option value="none">none</option>
+                        <option value="underline">underline</option>
+                        <option value="overline">overline</option>
+                        <option value="line-through">line-through</option>
+                    </select>
+                </div>
             </div>
 
             <br>
