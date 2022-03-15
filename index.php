@@ -151,6 +151,19 @@
                 </div>
             </div>
 
+            <!-- Border Radius -->
+            <div class="prop">
+                <div class="prop-sentence">
+                    Border-Radius: 
+                </div>
+                <div>
+                    <input type="number"> &nbsp; 
+                    <label>px</label> &nbsp; 
+                </div> 
+            </div>
+
+
+
             <br>
             <input type="submit" name="submit">
         </form>
