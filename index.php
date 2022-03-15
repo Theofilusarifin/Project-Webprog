@@ -105,9 +105,22 @@
                 </div> 
             </div>
 
-            <!-- Contoh -->
-            <!-- Halooo -->
-            <!-- ya -->
+            <!-- Box Shadow -->
+            <div class="prop">
+                <div class="prop-sentence">
+                    Box-Shadow : 
+                </div>
+                <div>
+                    <input type="number"> &nbsp; 
+                    <input type="number"> &nbsp; 
+                    <input type="number"> &nbsp; 
+                    <select name="" id="">
+                        <option value="px">px</option>
+                        <option value="none">none</option>
+                    </select>
+                </div> 
+            </div>
+
             <br>
             <input type="submit" name="submit">
         </form>
