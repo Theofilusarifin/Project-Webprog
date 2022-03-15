@@ -85,20 +85,47 @@
                 </div>
             </div>
 
-            <!-- Color -->
+            <!-- Text Decoration -->
             <div class="prop">
                 <div class="prop-sentence">
-                    Color : 
+                    Text-decoration:
+                </div>
+                <div>
+                    <select name="" id="">
+                        <option value="none">none</option>
+                        <option value="underline">underline</option>
+                        <option value="overline">overline</option>
+                        <option value="line-through">line-through</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Font-color -->
+            <div class="prop">
+                <div class="prop-sentence">
+                    Font-color : 
                 </div>
                 <div>
                     <input type="text">
                 </div> 
             </div>
 
-            <!-- Background -->
+            <!-- Font-size -->
             <div class="prop">
                 <div class="prop-sentence">
-                    Background : 
+                    Font-size : 
+                </div>
+                <div>
+                    <input type="number">
+                    <label>px</label> &nbsp; 
+                </div> 
+            </div>
+
+
+            <!-- Background-color -->
+            <div class="prop">
+                <div class="prop-sentence">
+                    Background-color : 
                 </div>
                 <div>
                     <input type="text">
@@ -122,8 +149,31 @@
                 </div>
             </div>
 
-            <!-- Border-Width -->
+            
+
+            <!-- Border Radius -->
+            <div class="prop">
+                <div class="prop-sentence">
+                    Border-radius: 
+                </div>
+                <div>
+                    <input type="number"> &nbsp; 
+                    <label>px</label> &nbsp; 
+                </div> 
+            </div>
+
+             <!-- Border Color -->
              <div class="prop">
+                <div class="prop-sentence">
+                    Border-color: 
+                </div>
+                <div>
+                    <input type="text"> &nbsp; 
+                </div> 
+            </div>
+
+            <!-- Border-Width -->
+            <div class="prop">
                 <div class="prop-sentence">
                     Border-width:
                 </div>
@@ -135,32 +185,9 @@
                     </select>
                 </div>
             </div>
+            
 
-            <!-- Text Decoration -->
-            <div class="prop">
-                <div class="prop-sentence">
-                    Text Decoration:
-                </div>
-                <div>
-                    <select name="" id="">
-                        <option value="none">none</option>
-                        <option value="underline">underline</option>
-                        <option value="overline">overline</option>
-                        <option value="line-through">line-through</option>
-                    </select>
-                </div>
-            </div>
 
-            <!-- Border Radius -->
-            <div class="prop">
-                <div class="prop-sentence">
-                    Border-Radius: 
-                </div>
-                <div>
-                    <input type="number"> &nbsp; 
-                    <label>px</label> &nbsp; 
-                </div> 
-            </div>
 
 
 
