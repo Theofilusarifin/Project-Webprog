@@ -111,12 +111,10 @@
                     Box-Shadow: 
                 </div>
                 <div>
-                    <select name="" id="">
                     <input type="number"> &nbsp; 
                     <input type="number"> &nbsp; 
                     <input type="number"> &nbsp; 
                     <label>px</label>
-                    </select>
                 </div> 
             </div>
 
