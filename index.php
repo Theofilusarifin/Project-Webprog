@@ -132,6 +132,16 @@
                 </div> 
             </div>
 
+            <!-- Color -->
+             <div class="prop">
+                <div class="prop-sentence">
+                    Color : 
+                </div>
+                <div>
+                    <input type="text">
+                </div> 
+            </div>           
+
             <!-- Box Shadow -->
             <div class="prop">
                 <div class="prop-sentence">
@@ -172,7 +182,7 @@
                 </div> 
             </div>
 
-            <!-- Border-Width -->
+            <!-- Border-width -->
             <div class="prop">
                 <div class="prop-sentence">
                     Border-width:
@@ -184,6 +194,32 @@
                         <option value="thick">thick</option>
                     </select>
                 </div>
+            </div>
+
+            <!-- Cursor -->
+            <div class="prop">
+                <div class="prop-sentence">
+                    Cursor:
+                </div>
+                <div>
+                    <select name="" id="">
+                        <option value="pointer">pointer</option>
+                        <option value="not-allowed">not-allowed</option>
+                    </select>
+                </div>
+            </div>            
+
+            <!-- Padding -->
+            <div class="prop">
+                <div class="prop-sentence">
+                    Padding: 
+                </div>
+                <div>
+                    <input type="number"> &nbsp; 
+                    <label>px</label> &nbsp; 
+                    <input type="number"> &nbsp; 
+                    <label>px</label> &nbsp; 
+                </div> 
             </div>
             
 
