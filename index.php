@@ -19,7 +19,7 @@
             display: flex;
         }
         .prop-sentence{
-            width: 100px;
+            width: 150px;
         }
         .container{
             border: solid black 1px;
