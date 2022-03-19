@@ -33,10 +33,10 @@
                             if($key == "box-shadow"){
                                 $shadow = $_POST["box-shadow"];
                                 if (count($shadow) == 3 && $shadow[0] != "" && $shadow[1] != "" && $shadow[2] == "") {
-                                    echo "        $key: $shadow[0]px $shadow[1]px;";
+                                    echo "$key: $shadow[0]px $shadow[1]px;";
                                 }
                                 if (count($shadow) == 3 && $shadow[0] != "" && $shadow[1] != "" && $shadow[2] != "") {
-                                    echo "        $key: $shadow[0]px $shadow[1]px $shadow[2];";
+                                    echo "$key: $shadow[0]px $shadow[1]px $shadow[2];";
                                 }
                                 echo "\n";
                             }
@@ -111,6 +111,7 @@
                 </div>
                 <div>
                     <select name="text-align">
+                        <option value="center">center</option>
                         <option value="right">right</option>
                         <option value="left">left</option>
                     </select>
@@ -246,18 +247,18 @@
                             if($key == "box-shadow"){
                                 $shadow = $_POST["box-shadow"];
                                 if (count($shadow) == 2 && $shadow[0] != "" && $shadow[1] != "" && $shadow[2] == "") {
-                                    echo "        $key: $shadow[0]px $shadow[1]px;";
+                                    echo "          $key: $shadow[0]px $shadow[1]px;";
                                     echo "<br>";
                                 }
                                 if (count($shadow) == 3 && $shadow[0] != "" && $shadow[1] != "" && $shadow[2] != "") {
-                                    echo "        $key: $shadow[0]px $shadow[1]px $shadow[2];";
+                                    echo "          $key: $shadow[0]px $shadow[1]px $shadow[2];";
                                     echo "<br>";
                                 }                            
                             }
                             else{
                                 if(is_numeric($value)) $px = " px";
                                 else $px = "";
-                                echo "        $key: $value$px;";
+                                echo "          $key: $value$px;";
                                 echo "<br>";
                             }
                         }
