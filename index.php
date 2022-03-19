@@ -25,6 +25,17 @@
             border: solid black 1px;
             padding: 30px 70px;
         }
+        .button{
+            width: 200px; 
+            cursor:pointer;
+            color: #fff;
+            font-weight: 800;
+            border-radius: 0.25rem;
+        }
+        .button_submit{
+            background-color: #198754;
+            border-color: #198754;
+        }
         .button_hasil{
             <?php
                 if(isset($_POST)){
@@ -57,7 +68,8 @@
         <h1>Project Webprog</h1>
         <h4>Theofilus Arifin - 160420046</h4>
         <h4>Valencia - 160820016</h4>
-        <br><br>
+        <hr>
+        <h3 style="color: #0d6efd; font-weight: 600;">Properties:</h3>
         <form action="index.php" method="POST" style="margin-bottom: 30px;">
 
             <!-- Width -->
@@ -66,7 +78,7 @@
                     Width : 
                 </div>
                 <div>
-                    <input type="number" name="width"> &nbsp; 
+                    <input type="number" name="width" placeholder=" input a number here"> &nbsp; 
                     <label>px</label>
                 </div>
             </div>
@@ -77,7 +89,7 @@
                     Height : 
                 </div>
                 <div>
-                    <input type="number" name="height"> &nbsp; 
+                    <input type="number" name="height" placeholder=" input a number here"> &nbsp; 
                     <label>px</label>
                 </div>
             </div>
@@ -88,7 +100,7 @@
                     Padding: 
                 </div>
                 <div>
-                    <input type="number" name="padding"> &nbsp; 
+                    <input type="number" name="padding" placeholder=" input a number here"> &nbsp; 
                     <label>px</label> &nbsp;
                 </div> 
             </div>
@@ -99,7 +111,7 @@
                     Margin: 
                 </div>
                 <div>
-                    <input type="number" name="margin"> &nbsp; 
+                    <input type="number" name="margin" placeholder=" input a number here"> &nbsp; 
                     <label>px</label> &nbsp;
                 </div> 
             </div>
@@ -111,6 +123,7 @@
                 </div>
                 <div>
                     <select name="text-align">
+                        <option disabled selected value="">select here</option>
                         <option value="center">center</option>
                         <option value="right">right</option>
                         <option value="left">left</option>
@@ -125,6 +138,7 @@
                 </div>
                 <div>
                     <select name="text-decoration">
+                        <option disabled selected value="">select here</option>
                         <option value="none">none</option>
                         <option value="underline">underline</option>
                         <option value="overline">overline</option>
@@ -139,7 +153,7 @@
                     Color : 
                 </div>
                 <div>
-                    <input type="text" name="color">
+                    <input type="text" name="color" placeholder=" input a color name">
                 </div> 
             </div>   
 
@@ -149,7 +163,7 @@
                     Font-size : 
                 </div>
                 <div>
-                    <input type="number" name="font-size">
+                    <input type="number" name="font-size" placeholder=" input a number here">
                     <label>px</label> &nbsp; 
                 </div> 
             </div>
@@ -160,7 +174,7 @@
                     Background-color : 
                 </div>
                 <div>
-                    <input type="text" name="background-color">
+                    <input type="text" name="background-color"  placeholder=" input a color name">
                 </div> 
             </div>        
 
@@ -170,12 +184,12 @@
                     Box-Shadow: 
                 </div>
                 <div>
-                    <input type="number" name="box-shadow[]"> &nbsp; 
-                    <input type="number" name="box-shadow[]"> &nbsp; 
+                    <input type="number" name="box-shadow[]" placeholder=" input a number here"> &nbsp; 
+                    <input type="number" name="box-shadow[]" placeholder=" input a number here"> &nbsp; 
                     <label>px</label> &nbsp; 
                 </div> 
                 <div>
-                    <input type="text" name="box-shadow[]">
+                    <input type="text" name="box-shadow[]"  placeholder=" input a color name">
                     <label>color</label>
                 </div>
             </div>
@@ -188,7 +202,7 @@
                     Border-radius: 
                 </div>
                 <div>
-                    <input type="number" name="border-radius"> &nbsp; 
+                    <input type="number" name="border-radius" placeholder=" input a number here"> &nbsp; 
                     <label>px</label> &nbsp; 
                 </div> 
             </div>
@@ -199,7 +213,7 @@
                     Border-color: 
                 </div>
                 <div>
-                    <input type="text" name="border-color"> &nbsp; 
+                    <input type="text" name="border-color"  placeholder=" input a color name"> &nbsp; 
                 </div> 
             </div>
 
@@ -210,6 +224,7 @@
                 </div>
                 <div>
                     <select name="border-width">
+                        <option disabled selected value="">select here</option>
                         <option value="thin">thin</option>
                         <option value="medium">medium</option>
                         <option value="thick">thick</option>
@@ -224,18 +239,18 @@
                 </div>
                 <div>
                     <select name="cursor">
+                        <option disabled selected value="">select here</option>
                         <option value="pointer">pointer</option>
                         <option value="not-allowed">not-allowed</option>
                     </select>
                 </div>
             </div>            
 
-            <div class="prop">
-                <input type="submit"> &nbsp; &nbsp; &nbsp; 
-                <button onclick="location.reload()">Reset CSS</button>
+            <div class="prop" style="height: 40px; margin-top:30px;">
+                <input type="submit" class="button button_submit"> &nbsp; &nbsp; &nbsp; 
             </div>
         </form>
-        <p>CSS:</p>
+        <h3 style="color: #0d6efd; font-weight: 600;">CSS:</h3>
         <div style="border: solid black 1px;">
             <?php
                 if(isset($_POST)){
@@ -268,10 +283,12 @@
                 }
             ?>
         </div>
+        <br>
 
 
-        <p>Hasil Button:</p>
+        <h3 style="color: #0d6efd; font-weight: 600;">Hasil Button:</h3>
         <button class="button_hasil">Button</button>
+        <div style="height:30px; width:auto;"></div>
     </div>
 </body>
 </html>
