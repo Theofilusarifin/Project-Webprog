@@ -261,7 +261,7 @@
                         if($value != ""){
                             if($key == "box-shadow"){
                                 $shadow = $_POST["box-shadow"];
-                                if (count($shadow) == 2 && $shadow[0] != "" && $shadow[1] != "" && $shadow[2] == "") {
+                                if (count($shadow) == 3 && $shadow[0] != "" && $shadow[1] != "" && $shadow[2] == "") {
                                     echo "          $key: $shadow[0]px $shadow[1]px;";
                                     echo "<br>";
                                 }
