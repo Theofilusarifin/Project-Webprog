@@ -247,7 +247,7 @@
             </div>            
 
             <div class="prop" style="height: 40px; margin-top:30px;">
-                <input type="submit" value ="SUBMIT" class="button button_submit"> &nbsp; &nbsp; &nbsp; 
+                <input type="submit" class="button button_submit"> &nbsp; &nbsp; &nbsp; 
             </div>
         </form>
         <h3 style="color: #0d6efd; font-weight: 600;">CSS:</h3>
