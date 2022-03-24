@@ -19,7 +19,7 @@
             display: flex;
         }
         .prop-sentence{
-            width: 150px;
+            width: 170px;
         }
         .container{
             border: solid black 1px;
@@ -40,21 +40,23 @@
             <?php
                 if(isset($_POST)){
                     foreach ($_POST as $key => $value) {
-                        if($value != ""){
-                            if($key == "box-shadow"){
-                                $shadow = $_POST["box-shadow"];
-                                if (count($shadow) == 3 && $shadow[0] != "" && $shadow[1] != "" && $shadow[2] == "") {
-                                    echo "$key: $shadow[0]px $shadow[1]px;";
+                        if (is_array($value)){
+                            if (strpos($key,"_size") !== false){
+                                if($value[0] != ""){
+                                    echo (explode("_",$key)[0].": ".$value[0].$value[1]."; \n");
                                 }
-                                if (count($shadow) == 3 && $shadow[0] != "" && $shadow[1] != "" && $shadow[2] != "") {
-                                    echo "$key: $shadow[0]px $shadow[1]px $shadow[2];";
-                                }
-                                echo "\n";
                             }
-                            else{
-                                if(is_numeric($value)) $px = "px";
-                                else $px = "";
-                                echo "$key: $value$px; \n";
+                        }
+                        else{
+                            if (strpos($key,"_color") !== false){
+                                if($value != ""){
+                                    echo (explode("_",$key)[0].": #".$value."; \n");
+                                } 
+                            }
+                            else {
+                                if($value != "") {
+                                    echo "$key: $value; \n";
+                                }
                             }
                         }
                     }
@@ -78,8 +80,12 @@
                     Width : 
                 </div>
                 <div>
-                    <input type="number" name="width" placeholder=" input a number here"> &nbsp; 
-                    <label>px</label>
+                    <input type="number" name="width_size[]" placeholder=" input a number here"> &nbsp; 
+                    <select name="width_size[]">
+                        <option value="px">px</option>
+                        <option value="em">em</option>
+                        <option value="rem">rem</option>
+                    </select> 
                 </div>
             </div>
 
@@ -89,8 +95,12 @@
                     Height : 
                 </div>
                 <div>
-                    <input type="number" name="height" placeholder=" input a number here"> &nbsp; 
-                    <label>px</label>
+                    <input type="number" name="height_size[]" placeholder=" input a number here"> &nbsp; 
+                    <select name="height_size[]">
+                        <option value="px">px</option>
+                        <option value="em">em</option>
+                        <option value="rem">rem</option>
+                    </select> 
                 </div>
             </div>
 
@@ -100,8 +110,12 @@
                     Padding: 
                 </div>
                 <div>
-                    <input type="number" name="padding" placeholder=" input a number here"> &nbsp; 
-                    <label>px</label> &nbsp;
+                    <input type="number" name="padding.size[]" placeholder=" input a number here"> &nbsp; 
+                    <select name="padding_size[]">
+                        <option value="px">px</option>
+                        <option value="em">em</option>
+                        <option value="rem">rem</option>
+                    </select>
                 </div> 
             </div>
 
@@ -111,8 +125,12 @@
                     Margin: 
                 </div>
                 <div>
-                    <input type="number" name="margin" placeholder=" input a number here"> &nbsp; 
-                    <label>px</label> &nbsp;
+                    <input type="number" name="margin.size[]" placeholder=" input a number here"> &nbsp; 
+                    <select name="margin_size[]">
+                        <option value="px">px</option>
+                        <option value="em">em</option>
+                        <option value="rem">rem</option>
+                    </select>  &nbsp;
                 </div> 
             </div>
 
@@ -152,8 +170,11 @@
                 <div class="prop-sentence">
                     Color : 
                 </div>
+                <div style="margin-left:-20px; margin-right:10px;">
+                    #
+                </div>
                 <div>
-                    <input type="text" name="color" placeholder=" input a color name">
+                    <input type="text" name="color_color" placeholder=" input a hex color code">
                 </div> 
             </div>   
 
@@ -163,38 +184,27 @@
                     Font-size : 
                 </div>
                 <div>
-                    <input type="number" name="font-size" placeholder=" input a number here">
-                    &nbsp;<label>px</label> &nbsp; 
+                    <input type="number" name="font-size_size[]" placeholder=" input a number here">&nbsp;
+                    <select name="font-size_size[]">
+                        <option value="px">px</option>
+                        <option value="em">em</option>
+                        <option value="rem">rem</option>
+                    </select> 
                 </div> 
             </div>
 
             <!-- Background-color -->
             <div class="prop">
                 <div class="prop-sentence">
-                    Background-color : 
+                    Background-color :
+                </div>
+                <div style="margin-left:-20px; margin-right:10px;">
+                    #
                 </div>
                 <div>
-                    <input type="text" name="background-color"  placeholder=" input a color name">
+                    <input type="text" name="background-color_color"  placeholder=" input a hex color code">
                 </div> 
-            </div>        
-
-            <!-- Box Shadow -->
-            <div class="prop">
-                <div class="prop-sentence">
-                    Box-Shadow: 
-                </div>
-                <div>
-                    <input type="number" name="box-shadow[]" placeholder=" input a number here"> &nbsp; 
-                    <input type="number" name="box-shadow[]" placeholder=" input a number here"> &nbsp; 
-                    <label>px</label> &nbsp; 
-                </div> 
-                <div>
-                    <input type="text" name="box-shadow[]"  placeholder=" input a color name">
-                    <label>color</label>
-                </div>
-            </div>
-
-            
+            </div>       
 
             <!-- Border Radius -->
             <div class="prop">
@@ -202,18 +212,25 @@
                     Border-radius: 
                 </div>
                 <div>
-                    <input type="number" name="border-radius" placeholder=" input a number here"> &nbsp; 
-                    <label>px</label> &nbsp; 
+                    <input type="number" name="border-radius_size[]" placeholder=" input a number here"> &nbsp; 
+                    <select name="border-radius_size[]">
+                        <option value="px">px</option>
+                        <option value="em">em</option>
+                        <option value="rem">rem</option>
+                    </select>
                 </div> 
             </div>
 
             <!-- Border Color -->
             <div class="prop">
                 <div class="prop-sentence">
-                    Border-color: 
+                    Border-color:
+                </div>
+                <div style="margin-left:-20px; margin-right:10px;">
+                    #
                 </div>
                 <div>
-                    <input type="text" name="border-color"  placeholder=" input a color name"> &nbsp; 
+                    <input type="text" name="border-color_color"  placeholder=" input a hex color code"> &nbsp; 
                 </div> 
             </div>
 
@@ -232,6 +249,20 @@
                 </div>
             </div>
 
+            <!-- Float -->
+            <div class="prop">
+                <div class="prop-sentence">
+                    Float:
+                </div>
+                <div>
+                    <select name="float">
+                        <option disabled selected value="">select here</option>
+                        <option value="left">left</option>
+                        <option value="right">right</option>
+                    </select>
+                </div>
+            </div>
+
             <!-- Cursor -->
             <div class="prop">
                 <div class="prop-sentence">
@@ -244,7 +275,17 @@
                         <option value="not-allowed">not-allowed</option>
                     </select>
                 </div>
-            </div>            
+            </div>
+            
+            <!-- Opacity -->
+            <div class="prop">
+                <div class="prop-sentence">
+                    Opacity: 
+                </div>
+                <div>
+                    <input type="number" max="1" min="0" step="0.1" name="opacity" style="width:160px;" placeholder=" input a number here"> &nbsp;
+                </div> 
+            </div>
 
             <div class="prop" style="height: 40px; margin-top:30px;">
                 <input type="submit" class="button button_submit"> &nbsp; &nbsp; &nbsp; 
@@ -254,32 +295,31 @@
         <div style="border: solid black 1px;">
             <?php
                 if(isset($_POST)){
-                    echo '<pre>';
+                    echo '<pre style="color:#da3f3d">';
                     echo htmlspecialchars('    .button_hasil {');
                     echo "<br>";
                     foreach ($_POST as $key => $value) {
-                        if($value != ""){
-                            if($key == "box-shadow"){
-                                $shadow = $_POST["box-shadow"];
-                                if (count($shadow) == 3 && $shadow[0] != "" && $shadow[1] != "" && $shadow[2] == "") {
-                                    echo "             $key: $shadow[0]px $shadow[1]px;";
-                                    echo "<br>";
+                        if (is_array($value)){
+                            if (strpos($key,"_size") !== false){
+                                if($value[0] != ""){
+                                    echo ("             ".explode("_",$key)[0].": ".$value[0].$value[1]."; \n");
                                 }
-                                if (count($shadow) == 3 && $shadow[0] != "" && $shadow[1] != "" && $shadow[2] != "") {
-                                    echo "             $key: $shadow[0]px $shadow[1]px $shadow[2];";
-                                    echo "<br>";
-                                }                            
                             }
-                            else{
-                                if(is_numeric($value)) $px = " px";
-                                else $px = "";
-                                echo "             $key: $value$px;";
-                                echo "<br>";
+                        }
+                        else{
+                            if (strpos($key,"_color") !== false){
+                                if($value != ""){
+                                    echo ("             ".explode("_",$key)[0].": #".$value."; \n");
+                                } 
+                            }
+                            else {
+                                if($value != "") {
+                                    echo "             $key: $value; \n";
+                                }
                             }
                         }
                     }
                     echo htmlspecialchars('    }');
-                    echo "<br>";
                     echo '</pre>';
                 }
             ?>
