@@ -28,32 +28,45 @@
         .button{
             width: 200px; 
             cursor:pointer;
-            color: #fff;
+            background-color: white; 
+            color: black; 
+            border: 2px solid #4CAF50;
             font-weight: 800;
             border-radius: 0.25rem;
         }
-        .button_submit{
-            background-color: #198754;
-            border-color: #198754;
+        .button:hover {
+            background-color: #4CAF50;
+            color: white;
         }
         .button_hasil{
             <?php
+            // is there any POST?
                 if(isset($_POST)){
                     foreach ($_POST as $key => $value) {
-                        if (is_array($value)){
+                        // Is value an array?
+                        if (is_array($value))
+                        {   // Is key contain "_size" ?
                             if (strpos($key,"_size") !== false){
+                                // Make sure it is not empty
                                 if($value[0] != ""){
+                                    // width_size -> [0] width [1] size
                                     echo (explode("_",$key)[0].": ".$value[0].$value[1]."; \n");
                                 }
                             }
                         }
+                        // value Not array
                         else{
+                            // Is key contain "_color" ?
                             if (strpos($key,"_color") !== false){
+                                // Make sure it is not empty
                                 if($value != ""){
+                                    // background-color_color -> [0] background-color [1] color
                                     echo (explode("_",$key)[0].": #".$value."; \n");
                                 } 
                             }
+                            // Normal input
                             else {
+                                // Make sure it is not empty
                                 if($value != "") {
                                     echo "$key: $value; \n";
                                 }
