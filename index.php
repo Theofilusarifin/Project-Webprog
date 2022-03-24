@@ -164,7 +164,7 @@
                 </div>
                 <div>
                     <input type="number" name="font-size" placeholder=" input a number here">
-                    <label>px</label> &nbsp; 
+                    &nbsp;<label>px</label> &nbsp; 
                 </div> 
             </div>
 
