@@ -255,30 +255,31 @@
             <?php
                 if(isset($_POST)){
                     echo '<pre>';
-                    echo htmlspecialchars('   <style>');
+                    echo htmlspecialchars('    .button_hasil {');
                     echo "<br>";
                     foreach ($_POST as $key => $value) {
                         if($value != ""){
                             if($key == "box-shadow"){
                                 $shadow = $_POST["box-shadow"];
                                 if (count($shadow) == 3 && $shadow[0] != "" && $shadow[1] != "" && $shadow[2] == "") {
-                                    echo "          $key: $shadow[0]px $shadow[1]px;";
+                                    echo "             $key: $shadow[0]px $shadow[1]px;";
                                     echo "<br>";
                                 }
                                 if (count($shadow) == 3 && $shadow[0] != "" && $shadow[1] != "" && $shadow[2] != "") {
-                                    echo "          $key: $shadow[0]px $shadow[1]px $shadow[2];";
+                                    echo "             $key: $shadow[0]px $shadow[1]px $shadow[2];";
                                     echo "<br>";
                                 }                            
                             }
                             else{
                                 if(is_numeric($value)) $px = " px";
                                 else $px = "";
-                                echo "          $key: $value$px;";
+                                echo "             $key: $value$px;";
                                 echo "<br>";
                             }
                         }
                     }
-                    echo htmlspecialchars('   </style>');
+                    echo htmlspecialchars('    }');
+                    echo "<br>";
                     echo '</pre>';
                 }
             ?>
