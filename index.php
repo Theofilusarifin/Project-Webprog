@@ -123,7 +123,7 @@
                     Padding: 
                 </div>
                 <div>
-                    <input type="number" name="padding.size[]" placeholder=" input a number here"> &nbsp; 
+                    <input type="number" name="padding_size[]" placeholder=" input a number here"> &nbsp; 
                     <select name="padding_size[]">
                         <option value="px">px</option>
                         <option value="em">em</option>
@@ -138,7 +138,7 @@
                     Margin: 
                 </div>
                 <div>
-                    <input type="number" name="margin.size[]" placeholder=" input a number here"> &nbsp; 
+                    <input type="number" name="margin_size[]" placeholder=" input a number here"> &nbsp; 
                     <select name="margin_size[]">
                         <option value="px">px</option>
                         <option value="em">em</option>
