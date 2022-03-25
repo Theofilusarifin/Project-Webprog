@@ -89,7 +89,7 @@
         <h4>Valencia - 160820016</h4>
         <hr>
         <h3 style="color: #0d6efd; font-weight: 600;">Properties:</h3>
-        <form action="index.php" method="POST" style="margin-bottom: 30px;">
+        <form action="index.php" method="POST" id="form_main" style="margin-bottom: 30px;">
 
             <!-- Width -->
             <div class="prop">
@@ -510,13 +510,4 @@
         <div style="height:30px; width:auto;"></div>
     </div>
 </body>
-<script>
-    $(document).ready(function(){
-        $('#clear_button').click(function(){
-            <?php
-                unset($_POST);
-            ?>
-        });
-    });
-</script>
 </html>
